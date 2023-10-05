@@ -32,7 +32,6 @@ export const PATCH = async (req: Request, { params }) => {
     // upsert: "if found, update it with this"
     update: analysis,
   })
-  console.log(updated)
 
-  return NextResponse.json({ data: updatedEntry })
+  return NextResponse.json({ data: { ...updatedEntry, analysis: updated } })
 }
