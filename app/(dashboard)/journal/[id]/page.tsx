@@ -22,16 +22,12 @@ const getEntry = async (id) => {
 const EntryPage = async ({ params }) => {
   const entry = await getEntry(params.id)
   const { summary, subject, mood, color, negative } = entry?.analysis
-    ? entry.analysis
-    : {}
-
-  console.log('BOOL:', negative)
 
   const analysisData = [
     { name: 'Summary', value: summary },
     { name: 'Subject', value: subject },
     { name: 'Mood', value: mood },
-    { name: 'Negative', value: negative.toString() },
+    { name: 'Negative', value: negative ? 'True' : 'False' },
   ]
   return (
     <div className="h-full w-full grid grid-cols-3">
