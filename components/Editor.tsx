@@ -18,10 +18,10 @@ const Editor = ({ entry }) => {
   })
 
   return (
-    <div className="w-full h-full">
+    <div className="h-full">
       {isLoading && <div>...Loading</div>}
       <textarea
-        className="w-full h-full p-8 text-xl outline-none"
+        className="h-[calc(100vh-67px)] w-full p-8 text-xl outline-none"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
